@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Industries | Idirlion Africa - Our Impact</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Explore Idirlion Africa's portfolio: smart infrastructure solutions for retail, schools, clinics, smart homes, NGOs, and commercial buildings in Kenya.">
+    <meta name="keywords"
+        content="smart infrastructure Kenya, retail POS systems, school solar labs, smart home automation Nairobi, NGO technology solutions">
+    <meta name="author" content="Idirlion Africa Limited">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://idirlionafrica.com/portfolio.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Our Portfolio | Idirlion Africa">
+    <meta property="og:description"
+        content="Engineering scalable solutions for sectors that power Africa's growth: retail, education, healthcare, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://idirlionafrica.com/portfolio.html">
+    <meta property="og:image" content="https://idirlionafrica.com/images/logo.png">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@IDIRLIONafrica">
+    <meta name="twitter:title" content="Our Portfolio | Idirlion Africa">
+    <meta name="twitter:description"
+        content="Smart infrastructure solutions for retail, schools, clinics, smart homes, NGOs in Kenya.">
+    <meta name="twitter:image" content="https://idirlionafrica.com/images/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Specific Styles for Portfolio Page "Digital Blueprint" Theme */
+        :root {
+            --blueprint-grid: rgba(0, 199, 123, 0.1);
+            --blueprint-border: rgba(0, 199, 123, 0.3);
+            --tech-blue: #00a3ff;
+        }
+
+        /* Blueprint Background Pattern */
+        .blueprint-bg {
+            background-color: var(--bg-body);
+            background-image:
+                linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+
+        .blueprint-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 30%, var(--bg-body) 90%);
+        }
+
+        /* Hero Section */
+        .portfolio-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        .system-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-green);
+            border-radius: 4px;
+            color: var(--accent-green);
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            background: rgba(0, 199, 123, 0.1);
+            letter-spacing: 2px;
+        }
+
+        .status-blink {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Industries Grid ("Sector Nodes") */
+        .industries-section {
+            padding: 4rem 0;
+        }
+
+        .sector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .sector-node {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .sector-node:hover {
+            border-color: var(--accent-green);
+            background: rgba(0, 199, 123, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .sector-node::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-green);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .sector-node:hover::before {
+            transform: scaleX(1);
+        }
+
+        .sector-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .sector-node:hover .sector-icon {
+            background: var(--accent-green);
+            color: #000;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .sector-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .sector-desc {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+
+        .sector-node:hover .sector-desc {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        /* Blueprint Showcase Kits */
+        .showcase-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .blueprint-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blueprint-card {
+            border: 1px solid var(--blueprint-border);
+            background: rgba(0, 20, 10, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            position: relative;
+            /* Clip path for tech corners */
+            clip-path: polygon(20px 0, 100% 0,
+                    100% calc(100% - 20px), calc(100% - 20px) 100%,
+                    0 100%, 0 20px);
+            transition: all 0.4s ease;
+        }
+
+        .blueprint-card:hover {
+            box-shadow: 0 0 20px rgba(0, 199, 123, 0.2);
+            border-color: var(--accent-green);
+        }
+
+        /* Blueprint Header (Top Bar) */
+        .bp-header {
+            background: rgba(0, 199, 123, 0.1);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--blueprint-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bp-code {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            letter-spacing: 1px;
+        }
+
+        /* Blueprint Body */
+        .bp-body {
+            padding: 2rem;
+        }
+
+        .bp-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bp-cat {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--tech-blue);
+            /* Different accent for category */
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .bp-specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .spec-item {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 10px;
+        }
+
+        .spec-item i {
+            color: var(--accent-green);
+            font-size: 0.8rem;
+        }
+
+        .bp-action {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-top: 1px solid var(--blueprint-border);
+        }
+
+        .bp-action:hover {
+            background: var(--accent-green);
+            color: #000;
+        }
+
+        /* Decorative corner markers */
+        .corner-mark {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--accent-green);
+            z-index: 2;
+            opacity: 0.5;
+        }
+
+        .c-tl {
+            top: 0;
+            left: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+
+        .c-br {
+            bottom: 0;
+            right: 0;
+            border-left: 0;
+            border-top: 0;
+        }
+
+        @media (max-width: 900px) {
+            .blueprint-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bp-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="blueprint-bg">
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Fixed Elements -->
+    <a href="index.html" class="fixed-logo">
+        <img src="images/logo.png" alt="Idirlion" style="height: 70px; width: auto;">
+    </a>
+    <a href="contact.html" class="fixed-cta btn btn-primary">Book Assessment</a>
+
+    <!-- Hamburger Menu Button (Mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"></button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary mobile-cta">Book Assessment</a>
+    </div>
+    <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
+
+    <!-- Floating Navbar (Links Only) -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="portfolio-hero">
+            <div class="hero-content">
+
+                <h1 class="display-text reveal" style="margin-bottom: 1rem;">The Impact Engine</h1>
+                <p class="subtext reveal">Engineering scalable solutions for sectors that power Africa's growth.</p>
+            </div>
+        </section>
+
+        <!-- Industries Served Section -->
+        <section class="industries-section">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <span
+                        style="color: var(--accent-green); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Target
+                        Sectors</span>
+                    <h2 style="font-size: 2.5rem; margin-top: 0.5rem;">Where We Make Impact</h2>
+                </div>
+
+                <div class="sector-grid">
+                    <!-- Retail -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-store"></i></div>
+                        <h3 class="sector-title">Retail Businesses</h3>
+                        <p class="sector-desc">Streamlining transactions and inventory for growth.</p>
+                    </div>
+
+                    <!-- Schools -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="sector-title">Schools & Learning Institutions</h3>
+                        <p class="sector-desc">Digital labs and connectivity for future leaders.</p>
+                    </div>
+
+                    <!-- Clinics -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-heart-pulse"></i></div>
+                        <h3 class="sector-title">Clinics & Health Centers</h3>
+                        <p class="sector-desc">Reliable power and records for better care.</p>
+                    </div>
+
+                    <!-- Smart Homes -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-house-signal"></i></div>
+                        <h3 class="sector-title">Smart Homes & Estates</h3>
+                        <p class="sector-desc">Automation for safety and energy efficiency.</p>
+                    </div>
+
+                    <!-- NGOs -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3 class="sector-title">NGOs & Donor Projects</h3>
+                        <p class="sector-desc">Data-driven impact and donor transparency.</p>
+                    </div>
+
+                    <!-- Offices -->
+                    <div class="sector-node reveal">
+                        <div class="sector-icon"><i class="fas fa-building-user"></i></div>
+                        <h3 class="sector-title">Offices & Commercial Buildings</h3>
+                        <p class="sector-desc">Secure infrastructure for modern business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Kits Section -->
+        <section class="showcase-section">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <span
+                        style="color: var(--tech-blue); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Deployable
+                        Solutions</span>
+                    <h2 style="font-size: 2.5rem; margin-top: 0.5rem;">Showcase Kits</h2>
+                </div>
+
+                <div class="blueprint-container">
+                    <!-- Kit 1: Retail POS -->
+                    <div class="blueprint-card reveal">
+                        <div class="corner-mark c-tl"></div>
+                        <div class="corner-mark c-br"></div>
+
+                        <div class="bp-header">
+                            <span class="bp-code">ID-KIT-RETAIL-01</span>
+                            <i class="fas fa-barcode" style="color: var(--accent-green);"></i>
+                        </div>
+                        <div class="bp-body">
+                            <span class="bp-cat">Commerce Solution</span>
+                            <h3 class="bp-title">Retail POS + Inventory Setup</h3>
+                            <p style="color: #ccc; margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.6;">
+                                A complete digital transformation package for retail stores. Streamline checkout, track
+                                stock in real-time, and analyze sales data.
+                            </p>
+                            <ul class="bp-specs">
+                                <li class="spec-item"><i class="fas fa-tablet-screen-button"></i> Touch-Screen POS</li>
+                                <li class="spec-item"><i class="fas fa-boxes-stacked"></i> Cloud Inventory</li>
+                                <li class="spec-item"><i class="fas fa-receipt"></i> Thermal Printing</li>
+                                <li class="spec-item"><i class="fas fa-chart-line"></i> Sales Analytics</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?kit=retail" class="bp-action">Deploy This Kit <i
+                                class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+                    </div>
+
+                    <!-- Kit 2: Smart Office -->
+                    <div class="blueprint-card reveal">
+                        <div class="corner-mark c-tl"></div>
+                        <div class="corner-mark c-br"></div>
+
+                        <div class="bp-header">
+                            <span class="bp-code">ID-KIT-OFFICE-0X</span>
+                            <i class="fas fa-briefcase" style="color: var(--accent-green);"></i>
+                        </div>
+                        <div class="bp-body">
+                            <span class="bp-cat">Enterprise Solution</span>
+                            <h3 class="bp-title">Secure Smart Office Kit</h3>
+                            <p style="color: #ccc; margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.6;">
+                                Enterprise-grade security and connectivity for modern workspaces. Ensure employee safety
+                                and
+                                data integrity around the clock.
+                            </p>
+                            <ul class="bp-specs">
+                                <li class="spec-item"><i class="fas fa-video"></i> IP CCTV System</li>
+                                <li class="spec-item"><i class="fas fa-fingerprint"></i> Bio-Metric Access</li>
+                                <li class="spec-item"><i class="fas fa-server"></i> Firewall Protection</li>
+                                <li class="spec-item"><i class="fas fa-wifi"></i> Failover Internet</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?kit=office" class="bp-action">Deploy This Kit <i
+                                class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+                    </div>
+
+                    <!-- Kit 3: Connected School -->
+                    <div class="blueprint-card reveal">
+                        <div class="corner-mark c-tl"></div>
+                        <div class="corner-mark c-br"></div>
+
+                        <div class="bp-header">
+                            <span class="bp-code">ID-KIT-EDU-2.0</span>
+                            <i class="fas fa-graduation-cap" style="color: var(--accent-green);"></i>
+                        </div>
+                        <div class="bp-body">
+                            <span class="bp-cat">Education Solution</span>
+                            <h3 class="bp-title">Connected School + Solar Lab</h3>
+                            <p style="color: #ccc; margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.6;">
+                                Empowering future generations with reliable digital access. A self-sustaining computer
+                                lab
+                                setup powered by solar energy.
+                            </p>
+                            <ul class="bp-specs">
+                                <li class="spec-item"><i class="fas fa-sun"></i> Solar Power Backup</li>
+                                <li class="spec-item"><i class="fas fa-network-wired"></i> High-Speed LAN</li>
+                                <li class="spec-item"><i class="fas fa-desktop"></i> Thin-Client Lab</li>
+                                <li class="spec-item"><i class="fas fa-users-viewfinder"></i> Filtering & Admin</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?kit=school" class="bp-action">Deploy This Kit <i
+                                class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+                    </div>
+
+                    <!-- Kit 4: Smart Home -->
+                    <div class="blueprint-card reveal">
+                        <div class="corner-mark c-tl"></div>
+                        <div class="corner-mark c-br"></div>
+
+                        <div class="bp-header">
+                            <span class="bp-code">ID-KIT-HOME-V1</span>
+                            <i class="fas fa-house-laptop" style="color: var(--accent-green);"></i>
+                        </div>
+                        <div class="bp-body">
+                            <span class="bp-cat">Residential Solution</span>
+                            <h3 class="bp-title">Smart Home Starter Pack</h3>
+                            <p style="color: #ccc; margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.6;">
+                                The first step into home automation. Control lighting, entry points, and energy usage
+                                from a
+                                single mobile dashboard.
+                            </p>
+                            <ul class="bp-specs">
+                                <li class="spec-item"><i class="fas fa-lightbulb"></i> Smart Lighting</li>
+                                <li class="spec-item"><i class="fas fa-mobile-screen"></i> Mobile App Control</li>
+                                <li class="spec-item"><i class="fas fa-lock"></i> Smart Door Locks</li>
+                                <li class="spec-item"><i class="fas fa-video"></i> Video Doorbell</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?kit=home" class="bp-action">Deploy This Kit <i class="fas fa-arrow-right"
+                                style="margin-left: 5px;"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Panel Footer -->
+        <footer class="control-footer">
+            <div class="control-grid-bg"></div>
+            <div class="container">
+                <!-- Main Grid -->
+                <div class="control-grid">
+                    <!-- Column 1: Logo + Tagline -->
+                    <div class="control-col">
+                        <a href="index.html" class="control-logo">
+                            <img src="images/logo.png" alt="Idirlion Africa" style="height: 50px; width: auto;">
+                        </a>
+                        <p class="control-tagline">Building Africa's Digital Future</p>
+
+                    </div>
+
+                    <!-- Column 2: Quick Links -->
+                    <div class="control-col">
+                        <h4 class="control-heading"><i class="fas fa-compass"></i> Quick Links</h4>
+                        <ul class="control-links">
+                            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <!-- Column 3: Contact Info -->
+                    <div class="control-col">
+                        <h4 class="control-heading"><i class="fas fa-satellite-dish"></i> Contact Hub</h4>
+                        <ul class="control-links contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                            <li><a href="mailto:info@idirlionafrica.com"><i class="fas fa-envelope"></i>
+                                    info@idirlionafrica.com</a></li>
+                            <li><a href="tel:+254768815405"><i class="fas fa-phone"></i> +254 768 815 405</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Social Icons -->
+                    <div class="control-col">
+                        <h4 class="control-heading"><i class="fas fa-broadcast-tower"></i> Connect</h4>
+                        <div class="control-social">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <p class="control-handle">@IDIRLIONafrica</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="control-bottom">
+                    <div class="control-legal">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <span class="separator">|</span>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                    <p>© 2026 Idirlion Africa Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Control Panel Footer Styles -->
+        <style>
+            .control-footer {
+                position: relative;
+                margin-top: 0;
+                padding: 4rem 0 2rem;
+                background: linear-gradient(180deg, #0a0f0c 0%, #050805 100%);
+                border-top: 2px solid rgba(0, 199, 123, 0.3);
+                overflow: hidden;
+            }
+
+            .control-grid-bg {
+                position: absolute;
+                inset: 0;
+                background-image:
+                    linear-gradient(rgba(0, 199, 123, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 199, 123, 0.03) 1px, transparent 1px);
+                background-size: 40px 40px;
+                pointer-events: none;
+            }
+
+            .control-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+                position: relative;
+            }
+
+            .control-col {
+                position: relative;
+                padding-right: 2rem;
+            }
+
+            .control-col:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 1px;
+                background: linear-gradient(180deg, transparent, rgba(0, 199, 123, 0.4), transparent);
+            }
+
+            .control-logo img {
+                margin-bottom: 1rem;
+                transition: filter 0.3s ease;
+            }
+
+            .control-logo:hover img {
+                filter: brightness(1.2);
+            }
+
+            .control-tagline {
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .control-heading {
+                color: #fff;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .control-heading i {
+                color: var(--accent-green);
+                font-size: 0.9rem;
+            }
+
+            .control-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .control-links li {
+                margin-bottom: 0.75rem;
+            }
+
+            .control-links a,
+            .control-links li {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .control-links a i {
+                color: rgba(0, 199, 123, 0.5);
+                font-size: 0.8rem;
+                width: 16px;
+                text-align: center;
+            }
+
+            .control-links a:hover {
+                color: #fff;
+                transform: translateX(5px);
+            }
+
+            .control-links a:hover i {
+                color: var(--accent-green);
+            }
+
+            .contact-info li {
+                color: var(--text-secondary);
+            }
+
+            .contact-info li i {
+                color: rgba(0, 199, 123, 0.5);
+                font-size: 0.8rem;
+                width: 16px;
+                text-align: center;
+            }
+
+            .control-social {
+                display: flex;
+                gap: 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .control-social a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-secondary);
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            .control-social a:hover {
+                background: var(--accent-green);
+                border-color: var(--accent-green);
+                color: #000;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 199, 123, 0.3);
+            }
+
+            .control-handle {
+                color: var(--accent-green);
+                font-size: 0.85rem;
+                font-family: 'Courier New', monospace;
+            }
+
+            .control-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 3rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .control-bottom p {
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 0.8rem;
+                margin: 0;
+            }
+
+            .control-legal {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .control-legal a {
+                color: rgba(255, 255, 255, 0.4);
+                text-decoration: none;
+                font-size: 0.8rem;
+                transition: color 0.3s ease;
+            }
+
+            .control-legal a:hover {
+                color: var(--accent-green);
+            }
+
+            .control-legal .separator {
+                color: rgba(255, 255, 255, 0.2);
+                font-size: 0.8rem;
+            }
+
+            @media (max-width: 1024px) {
+                .control-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .control-col:nth-child(3)::after {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .control-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .control-col::after {
+                    display: none;
+                }
+
+                .control-col {
+                    padding-right: 0;
+                }
+
+                .control-bottom {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 0.5rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .control-grid {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+
+                .control-col {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .control-social {
+                    justify-content: center;
+                }
+            }
+        </style>
+    </main>
+
+    <script src="js/main.js"></script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const backdrop = document.getElementById('mobileBackdrop');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('active');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', function () {
+            if (mobileMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-inner">
+            <div class="cookie-consent-text">
+                <p>We use cookies to enhance your browsing experience and analyze site traffic. By continuing, you agree
+                    to our use of cookies. <a href="privacy-policy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-outline" id="cookieDecline">Decline</button>
+                <button class="btn btn-primary" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

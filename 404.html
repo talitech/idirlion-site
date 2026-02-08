@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Idirlion Africa</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The page you're looking for doesn't exist. Return to Idirlion Africa's homepage.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Idirlion Africa Limited">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://idirlionafrica.com/404.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(0, 25, 20, 0.9) 0%, var(--bg-body) 80%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 800;
+            background: linear-gradient(180deg, var(--accent-green) 0%, rgba(0, 199, 123, 0.3) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+
+            0%,
+            90%,
+            100% {
+                transform: translate(0);
+            }
+
+            92% {
+                transform: translate(-2px, 2px);
+            }
+
+            94% {
+                transform: translate(2px, -2px);
+            }
+
+            96% {
+                transform: translate(-2px, -2px);
+            }
+
+            98% {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error-message {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .error-terminal {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 199, 123, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+        }
+
+        .terminal-line {
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .terminal-line span {
+            color: #ff4444;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Grid background */
+        .error-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 199, 123, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 199, 123, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        /* Footer Styles */
+        .control-footer {
+            background: linear-gradient(180deg, rgba(5, 15, 10, 0.98) 0%, rgba(2, 8, 4, 0.99) 100%);
+            padding: 4rem 0 2rem;
+            position: relative;
+            border-top: 1px solid rgba(0, 199, 123, 0.1);
+        }
+
+        .control-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 199, 123, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 199, 123, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .control-col {
+            position: relative;
+            padding-right: 2rem;
+        }
+
+        .control-col:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(0, 199, 123, 0.4), transparent);
+        }
+
+        .control-logo img {
+            margin-bottom: 1rem;
+            transition: filter 0.3s ease;
+        }
+
+        .control-logo:hover img {
+            filter: brightness(1.2);
+        }
+
+        .control-tagline {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .control-heading {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-heading i {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+        }
+
+        .control-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .control-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .control-links a,
+        .control-links li {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .control-links a i {
+            color: rgba(0, 199, 123, 0.5);
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+
+        .control-links a:hover {
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .control-links a:hover i {
+            color: var(--accent-green);
+        }
+
+        .control-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .control-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .control-social a:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 199, 123, 0.3);
+        }
+
+        .control-handle {
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .control-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .control-bottom p {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .control-legal {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .control-legal a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .control-legal a:hover {
+            color: var(--accent-green);
+        }
+
+        .control-legal .separator {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .control-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .control-col:nth-child(3)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .control-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .control-col::after {
+                display: none;
+            }
+
+            .control-col {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .control-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Fixed Elements -->
+    <a href="index.html" class="fixed-logo">
+        <img src="images/logo.png" alt="Idirlion" style="height: 70px; width: auto;">
+    </a>
+
+    <main class="error-page">
+        <div class="error-grid"></div>
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">>> CONNECTION_LOST</h1>
+            <p class="error-message">
+                The page you're looking for has been moved, deleted, or never existed in our network.
+            </p>
+
+            <div class="error-terminal">
+                <div class="terminal-line">> STATUS: <span>NOT_FOUND</span></div>
+                <div class="terminal-line">> SIGNAL: DISCONNECTED</div>
+                <div class="terminal-line">> SUGGESTED: RETURN_TO_BASE</div>
+            </div>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home" style="margin-right: 8px;"></i> Return Home
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Control Panel Footer -->
+    <footer class="control-footer">
+        <div class="control-grid-bg"></div>
+        <div class="container">
+            <div class="control-grid">
+                <div class="control-col">
+                    <a href="index.html" class="control-logo"><img src="images/logo.png" alt="Idirlion Africa"
+                            style="height: 50px; width: auto;"></a>
+                    <p class="control-tagline">Building Africa's Digital Future</p>
+
+                </div>
+                <div class="control-col">
+                    <h4 class="control-heading"><i class="fas fa-compass"></i> Quick Links</h4>
+                    <ul class="control-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="control-col">
+                    <h4 class="control-heading"><i class="fas fa-satellite-dish"></i> Contact Hub</h4>
+                    <ul class="control-links contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                        <li><a href="mailto:info@idirlionafrica.com"><i class="fas fa-envelope"></i>
+                                info@idirlionafrica.com</a></li>
+                        <li><a href="tel:+254768815405"><i class="fas fa-phone"></i> +254 768 815 405</a></li>
+                    </ul>
+                </div>
+                <div class="control-col">
+                    <h4 class="control-heading"><i class="fas fa-broadcast-tower"></i> Connect</h4>
+                    <div class="control-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="control-handle">@IDIRLIONafrica</p>
+                </div>
+            </div>
+            <div class="control-bottom">
+                <div class="control-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <p>© 2026 Idirlion Africa Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-consent-inner">
+            <div class="cookie-consent-text">
+                <p>We use cookies to enhance your browsing experience and analyze site traffic. By continuing, you agree
+                    to our use of cookies. <a href="privacy-policy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-outline" id="cookieDecline">Decline</button>
+                <button class="btn btn-primary" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

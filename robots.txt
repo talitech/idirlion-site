@@ -1,0 +1,11 @@
+# robots.txt for Idirlion Africa Limited
+# https://idirlionafrica.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://idirlionafrica.com/sitemap.xml
+
+# Disallow admin/private areas (none currently)
+# Disallow: /admin/
