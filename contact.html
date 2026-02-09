@@ -282,6 +282,95 @@
                 opacity: 0.2;
             }
         }
+
+        /* ============================================
+           MOBILE RESPONSIVE STYLES FOR CONTACT PAGE
+           ============================================ */
+
+        /* Tablet breakpoint */
+        @media (max-width: 900px) {
+
+            /* Hero adjustments */
+            .comms-hero {
+                min-height: 60vh;
+                padding-top: 100px;
+            }
+
+            .display-text {
+                font-size: 2rem;
+            }
+
+            .subtext {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            /* Stack form and uplink coordinates */
+            .contact-wrapper .section .container>div[style*="grid-template-columns"] {
+                display: block !important;
+            }
+
+            /* Terminal Form adjustments */
+            .terminal-interface {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .terminal-header {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Mobile breakpoint */
+        @media (max-width: 600px) {
+            .comms-hero {
+                min-height: 50vh;
+                padding-top: 80px;
+            }
+
+            .display-text {
+                font-size: 1.5rem;
+            }
+
+            .terminal-interface {
+                padding: 1rem;
+            }
+
+            /* Stack email/phone inputs */
+            .terminal-interface div[style*="grid-template-columns: 1fr 1fr"] {
+                display: block !important;
+            }
+
+            .terminal-interface div[style*="grid-template-columns: 1fr 1fr"]>div {
+                margin-bottom: 1.5rem;
+            }
+
+            .cmd-label {
+                font-size: 0.75rem;
+            }
+
+            .transmit-btn {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            .data-node {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .node-icon {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Mobile menu CTA fix */
+            .mobile-menu-overlay .mobile-cta {
+                margin: 2rem !important;
+            }
+        }
     </style>
 </head>
 
