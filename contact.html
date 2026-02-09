@@ -283,9 +283,23 @@
             }
         }
 
-        /* Contact Page Specific: Fix mobile menu CTA position */
+        /* Contact Page Specific: Fix mobile menu layout */
+        .mobile-menu-overlay {
+            height: 100vh !important;
+            max-height: 100vh !important;
+            overflow: hidden !important;
+        }
+
+        .mobile-menu-overlay .mobile-nav-links {
+            flex: 0 0 auto !important;
+            padding-bottom: 2rem !important;
+        }
+
         .mobile-menu-overlay .mobile-cta {
-            margin: 2rem !important;
+            margin-top: auto !important;
+            margin-bottom: 2rem !important;
+            margin-left: 2rem !important;
+            margin-right: 2rem !important;
         }
     </style>
 </head>
@@ -894,4 +908,3 @@
 </body>
 
 </html>
-
